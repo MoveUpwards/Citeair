@@ -24,6 +24,14 @@ final class CiteairTests: XCTestCase {
         let client = Citeair(with: .production)
         client.datas(at: 44.8333, long: -0.5667) { result in
             exp.fulfill()
+            switch result {
+                case .failure(let error):
+                    XCTAssert(false, error.localizedDescription)
+                default:
+                break
+
+            }
+            XCTAssertNil(result)
         }
 
         waitForExpectations(timeout: 10)

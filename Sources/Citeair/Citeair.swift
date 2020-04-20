@@ -6,11 +6,15 @@
 //
 
 import Alamofire
+import Foundation
 import Offenbach
 
 public final class Citeair {
+    let jsonDecoder = JSONDecoder()
+
     public required init(with env: ApiEnvironment) {
-        ApiService.default.set(config: WaqiEnv(env: .production))
+        jsonDecoder.dateDecodingStrategy = .iso8601
+        ApiService.default.set(config: WaqiEnv(env: .production, decoder: jsonDecoder))
     }
 
     public func datas(at lat: Double, long: Double, completion: @escaping (Result<Welcome, Error>) -> Void) {
