@@ -23,7 +23,7 @@ final class CiteairTests: XCTestCase {
     func testJsonDecodeWithMissingAqi() {
         let jsonString =
         """
-        {"status":"ok","data":{"aqi":23,"idx":6896,"attributions":[{"url":"http://www.atmosud.org","name":"Air PACA - Association de surveillance de la qualité de l'air en région Provence-Alpes-Cote d'Azur","logo":"Paca-Air-Paca.png"},{"url":"https://waqi.info/","name":"World Air Quality Index Project"}],"city":{"geo":[43.5625,7.00722],"name":"Cannes Broussailles, PACA, France","url":"https://aqicn.org/city/france/paca/cannes-broussailles"},"dominentpol":"o3","iaqi":{"dew":{"v":14},"h":{"v":93},"no2":{"v":5.3},"o3":{"v":22.9},"p":{"v":1009},"pm10":{"v":10},"pm25":{"v":15},"t":{"v":15},"w":{"v":2}},"time":{"s":"2020-04-28 10:00:00","tz":"+02:00","v":1588068000},"debug":{"sync":"2020-04-28T18:17:44+09:00"}}}
+        {"status":"ok","data":{"aqi":23,"idx":6896,"attributions":[{"url":"http://www.atmosud.org","name":"Air PACA - Association de surveillance de la qualité de l'air en région Provence-Alpes-Cote d'Azur","logo":"Paca-Air-Paca.png"},{"url":"https://waqi.info/","name":"World Air Quality Index Project"}],"city":{"geo":[43.5625,7.00722],"name":"Cannes Broussailles, PACA, France","url":"https://aqicn.org/city/france/paca/cannes-broussailles"},"dominentpol":"o3","iaqi":{"dew":{"v":14},"h":{"v":93},"no2":{"v":5.3},"o3":{"v":22.9},"p":{"v":1009},"pm10":{"v":10},"pm25":{"v":15},"t":{"v":15},"w":{"v":2},"so2":{"v":3.6},"co":{"v":6.7}},"time":{"s":"2020-04-28 10:00:00","tz":"+02:00","v":1588068000},"debug":{"sync":"2020-04-28T18:17:44+09:00"}}}
         """
 
         guard let jsonData = jsonString.data(using: .utf8) else {

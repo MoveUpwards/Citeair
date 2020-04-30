@@ -8,7 +8,7 @@
 import Foundation
 
 public struct Iaqi: Codable {
-    public let dew, h, p, t, pm10, pm25, w, wg, no2, o3: Value?
+    public let dew, h, p, t, pm10, pm25, w, wg, no2, o3, co, so2: Value?
 
     public init(dew: Value,
                 h: Value,
@@ -19,7 +19,9 @@ public struct Iaqi: Codable {
                 pm25: Value,
                 t: Value,
                 w: Value,
-                wg: Value) {
+                wg: Value,
+                co: Value,
+                so2: Value) {
         self.dew = dew
         self.h = h
         self.no2 = no2
@@ -30,5 +32,7 @@ public struct Iaqi: Codable {
         self.t = t
         self.w = w
         self.wg = wg
+        self.co = co
+        self.so2 = so2
     }
 }
